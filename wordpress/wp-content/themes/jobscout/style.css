@@ -916,7 +916,7 @@ a:hover {
 # Widgets
 --------------------------------------------------------------*/
 .widget {
-  margin: 0 0 60px 0;
+  margin: 0 0 0 0;
   /* Make sure select elements fit in widgets. */
 }
 
@@ -1124,10 +1124,10 @@ a.btn {
   border: 1px solid #2ace5e;
   color: #fff;
   font-weight: 700;
-
   font-size: 0.888em;
   border-radius: 5px;
   padding: 10px 18px;
+  white-space: nowrap;
 }
 
 a.btn:hover,
@@ -2129,7 +2129,7 @@ HEADER MAIN SECTION
 }
 
 .header-main {
-  padding: 30px 0;
+  padding: 0;
 }
 
 body:not(.home) .site-header,
@@ -2318,6 +2318,7 @@ SITE BANNER SECTION
   max-width: 770px;
   margin-left: auto;
   margin-right: auto;
+  text-align: left;
 }
 
 .banner-caption .title {
@@ -2439,6 +2440,120 @@ SITE BANNER SECTION
   background-image: url('data:image/svg+xml; utf-8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="%232ace5e" d="M508.5 468.9L387.1 347.5c-2.3-2.3-5.3-3.5-8.5-3.5h-13.2c31.5-36.5 50.6-84 50.6-136C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c52 0 99.5-19.1 136-50.6v13.2c0 3.2 1.3 6.2 3.5 8.5l121.4 121.4c4.7 4.7 12.3 4.7 17 0l22.6-22.6c4.7-4.7 4.7-12.3 0-17zM208 368c-88.4 0-160-71.6-160-160S119.6 48 208 48s160 71.6 160 160-71.6 160-160 160z"></path></svg>');
 }
 
+
+/* --- Search form layout (đoạn css thêm)--- */
+.job_search_row {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Make the keyword input expand the most */
+.job_search_row .search_keywords {
+  flex: 1 1 60%;
+}
+
+/* location and category smaller */
+.job_search_row .search_location,
+.job_search_row .search_categories {
+  flex: 0 0 20%;
+}
+
+/* submit button */
+.job_search_row .search_submit {
+  flex: 0 0 120px;
+}
+
+/* common field styles */
+.job_search_banner .job_field {
+  position: relative;
+}
+
+.job_search_banner label {
+  display: none;
+}
+
+/* hide labels visually (kept for accessibility) */
+
+.job_search_banner input[type="text"],
+.job_search_banner select {
+  width: 100%;
+  border-radius: 0px;
+  border: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  font-size: 15px;
+  outline: none;
+  padding-left: 40px;
+}
+
+/* placeholder color */
+.job_search_banner ::-webkit-input-placeholder {
+  color: #bfbfbf;
+}
+
+.job_search_banner ::-moz-placeholder {
+  color: #bfbfbf;
+}
+
+/* submit button style */
+.job_search_banner input[type="submit"] {
+  width: 100%;
+  padding: 14px 18px;
+  background: linear-gradient(180deg, #ff7a1a, #e85a00);
+  color: #fff;
+  border: none;
+  border-radius: 0px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(232, 90, 0, 0.28);
+}
+
+
+.input_with_icon,
+.search_location {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input_with_icon .icon,
+.search_location .icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  pointer-events: none;
+}
+
+.input_with_icon input,
+.search_location input {
+  width: 100%;
+  padding-left: 36px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+
+/* small responsive tweaks */
+@media (max-width: 900px) {
+  .job_search_row {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .job_search_banner {
+    padding: 20px;
+  }
+
+  .job_search_row .search_submit {
+    width: 100%;
+  }
+}
+
 /*=========================
 SITE BANNER WITH VIDEO
 ==========================*/
@@ -2533,7 +2648,7 @@ section.category-section .widget_rrtc_icon_text_widget {
 }
 
 /*=============================
-TOP JOB SECTION
+TOP JOB SECTION (Đã thêm và sửa css)
 =============================*/
 section.top-job-section {
   background: #f5f5f7;
@@ -2549,16 +2664,18 @@ section.top-job-section .section-title {
   display: flex;
   flex: 1;
   flex-wrap: wrap;
+  gap: 20px;
 }
 
 .top-job-section .row div.job_listings article {
   width: 48%;
   background: #fff;
   border: 1px solid rgba(0, 0, 0, 0.1);
-  margin-right: 2.5%;
-  margin-bottom: 3%;
+  /* margin-right: 2.5%;
+  margin-bottom: 3%; */
   border-radius: 5px;
-  padding: 30px;
+  /* padding: 30px; */
+  margin: 0;
   position: relative;
   display: flex;
   flex-wrap: wrap;
@@ -2570,10 +2687,20 @@ section.top-job-section .section-title {
   margin-right: 0;
 }
 
+/* Logo */
 .top-job-section .row div.job_listings article .company-logo {
   width: 100px;
+  height: 100px;
   margin: 0;
   background: #eeeeee;
+  border: 1px solid #e5e5e5;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background: #fafafa;
+  margin: 0;
 }
 
 .featured-label {
@@ -2598,6 +2725,7 @@ section.top-job-section .section-title {
 
 .top-job-section .row div.job_listings article .job-title-wrap {
   width: calc(100% - 100px);
+  flex: 1;
   padding-left: 20px;
 }
 
@@ -2610,31 +2738,64 @@ section.top-job-section .section-title {
 }
 
 .top-job-section .row div.job_listings article .company-name {
-  font-size: 0.8888em;
-  color: rgba(0, 0, 0, 0.5);
-  font-weight: 400;
+  position: relative;
   line-height: 1.44em;
   margin-top: 5px;
+  border: none;
+  color: #555;
+  background: #f2f2f2;
+  padding: 5px 12px;
+  font-weight: 600;
+  font-size: 12px;
+  list-style: none;
 }
 
-.top-job-section .row div.job_listings article .company-name::before {
-  content: "@";
+.top-job-section .row div.job_listings article .company-name::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  height: 20px;
+  border-right: 1px solid #b2b2b2;
 }
+
+/* .top-job-section .row div.job_listings article .company-name::before {
+  content: "@";
+} */
 
 .top-job-section .row div.job_listings article .entry-meta {
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
-  margin-top: 15px;
-  padding-top: 15px;
+  /* border-top: 1px solid rgba(0, 0, 0, 0.1); */
+  /* margin-top: 15px; */
+  /* padding-top: 15px; */
   font-size: 1em;
+  margin-top: 10px;
+  font-size: 13px;
+  color: #444;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
 }
 
-.top-job-section .row div.job_listings article .salary-amt,
-.top-job-section .row div.job_listings article .company-address {
+.top-job-section .row div.job_listings article .salary-amt {
   font-size: 0.8888em;
   line-height: 1.44em;
   font-weight: 400;
   margin-bottom: 5px;
 }
+
+.top-job-section .row div.job_listings article .company-address {
+  line-height: 1.44em;
+  margin-top: 5px;
+  border: none;
+  color: #555;
+  background: #f2f2f2;
+  padding: 5px 12px;
+  font-weight: 600;
+  font-size: 12px;
+  list-style: none;
+}
+
 
 .top-job-section .row div.job_listings article .salary-amt .currency {
   font-weight: 900;
@@ -2665,21 +2826,30 @@ section.top-job-section .section-title {
 .job-manager li.job-type,
 .job-types li.job-type,
 .job_listing li.job-type {
+  position: relative;
+  line-height: 1.44em;
+  margin-top: 5px;
+  border: none;
+  color: #555;
+  background: #f2f2f2;
+  padding: 5px 12px;
+  font-weight: 600;
+  font-size: 12px;
   list-style: none;
-  font-size: 0.7778em;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-weight: 700;
-  display: inline-block;
-  border: 1px solid #2ace5e;
-  border-radius: 40px;
-  padding: 5px 20px;
-  color: #2ace5e;
-  margin-top: 10px;
-  cursor: default;
 }
 
-.job-manager li.freelance,
+.job_listing li.job-type::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  height: 20px;
+  border-right: 1px solid #b2b2b2;
+}
+
+
+/* .job-manager li.freelance,
 .job-types li.freelance,
 .job_listing li.freelance {
   color: #39c;
@@ -2705,7 +2875,7 @@ section.top-job-section .section-title {
 .job_listing li.temporary {
   color: #d93674;
   border-color: #d93674;
-}
+} */
 
 .top-job-section div.job_listings .load_more_jobs {
   display: table;
@@ -2744,6 +2914,65 @@ section.top-job-section .section-title {
 
 .top-job-section div.job_listings .load_more_jobs strong {
   font-weight: 700;
+}
+
+.job_listing {
+  display: flex;
+  padding: 20px;
+  background: #fff;
+  border: 1px solid #e9e9e9;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  align-items: flex-start;
+}
+
+.job_listing .entry-title a {
+  font-size: 18px;
+  font-weight: 700;
+  color: #000;
+  text-decoration: none;
+}
+
+.job_listing .entry-title a:hover {
+  color: #0073aa;
+}
+
+/* Date */
+.job_listing .job-date {
+  font-size: 12px;
+  color: #777;
+  margin-top: 4px;
+}
+
+/* Location */
+.company-address {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 13px;
+  color: #555;
+}
+
+/* Description */
+.job-excerpt {
+  margin-top: 12px;
+  font-size: 13px;
+  line-height: 1.45;
+  color: #333;
+}
+
+.job-excerpt p {
+  position: relative;
+  padding-left: 20px;
+  /* cách nội dung ra khỏi dấu • */
+}
+
+.job-excerpt p::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #555;
 }
 
 /*============================
@@ -2892,45 +3121,104 @@ section[class*="-section"] .widget_raratheme_companion_cta_widget .right .button
 }
 
 /*===========================
-ARTICLE SECTION
+ARTICLE SECTION (đã sửa và thêm css)
 ===========================*/
 section.article-section {
-  margin: 70px 0;
+  padding: 50px 0 0 0;
   text-align: center;
+  background: #f2f2f2;
 }
 
-.article-section .article-wrap {
+.article-service-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 30px;
-  text-align: left;
-  margin-top: 50px;
-  margin-bottom: 40px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  margin-top: 40px;
 }
 
-.article-section .article-wrap article {
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.16);
-  border-radius: 5px;
-  /*overflow: hidden;*/
+.service-item {
+  display: grid;
+  grid-template-columns: 40% 60%;
+  align-items: center;
+  background: #fff;
+  padding: 22px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+  transition: 0.3s ease;
 }
 
-.article-section .article-wrap article img {
+/* === IMAGE === */
+.service-image img {
   width: 100%;
+  height: 200px;
+  object-fit: cover;
 }
 
-.article-section .article-wrap header.entry-header {
-  padding: 30px;
+/* === CONTENT === */
+.service-content {
+  padding-left: 25px;
+  text-align: left;
 }
 
-.article-section .article-wrap header.entry-header .entry-title {
-  margin: 10px 0 0 0;
-  line-height: 1.5;
-  font-size: 1.112em;
+.service-title {
+  font-size: 20px;
   font-weight: 700;
+  margin-bottom: 8px;
 }
+
+.service-title a {
+  color: #000;
+  text-decoration: none;
+}
+
+.service-title a:hover {
+  color: #ff6b3d;
+}
+
+.service-desc {
+  color: #666;
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.service-readmore {
+  color: #ff6b3d;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.service-readmore:hover {
+  text-decoration: underline;
+}
+
+.btn-wrap {
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin: 40px auto;
+}
+
+@media (max-width: 900px) {
+  .article-service-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-item {
+    grid-template-columns: 1fr;
+  }
+
+  .service-content {
+    padding-left: 0;
+    margin-top: 20px;
+  }
+
+  .service-image img {
+    height: 250px;
+  }
+}
+
 
 /*=========================
-TESTIMONIAL SECTION
+TESTIMONIAL SECTION (đã sửa css ẩn đi )
 =========================*/
 section.testimonial-section:after {
   content: "";
@@ -2951,6 +3239,7 @@ section.testimonial-section {
   z-index: 1;
   background-image: url(images/testimonial-bg.jpg);
   background-repeat: no-repeat;
+  display: none;
 }
 
 .testimonial-section .section-title,
@@ -3039,11 +3328,12 @@ section.testimonial-section {
 }
 
 /*==========================
-CLIENT SECTION
+CLIENT SECTION (đã sửa css ẩn nó đi)
 ==========================*/
 section.client-section {
   margin: 40px 0 60px 0;
   text-align: center;
+  display: none;
 }
 
 .client-section .widget {
@@ -3061,82 +3351,120 @@ section.client-section {
 }
 
 /*==========================
-SITE FOOTER SECTION
+SITE FOOTER SECTION (đã thêm và sửa css)
 ==========================*/
+
+/* Vùng trên */
 .footer-t {
-  background: #000;
-  padding-top: 60px;
+  color: #fff;
 }
 
-.site-footer .grid:not(.column-1) {
+.site-footer .container {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+/* GRID 3 CỘT */
+.site-footer .grid.column-3 {
   display: flex;
-  flex: 1;
-  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 30px;
 }
 
-.site-footer .grid:not(.column-1)>.col {
-  margin-right: 3%;
-}
-
-.site-footer .grid:not(.column-1)>.col:last-child {
-  margin-right: 0;
-}
-
-.site-footer .grid.column-4>.col {
-  width: 22.666%;
-}
-
-.site-footer .grid.column-3>.col {
-  width: 31.33%;
-}
-
-.site-footer .grid.column-2>.col {
-  width: 48.33%;
-}
-
-.site-footer .widget_text .textwidget {
-  color: rgba(255, 255, 255, 0.8);
-}
-
-.widget_text .textwidget p {
-  margin-top: 0;
-  margin-bottom: 20px;
-}
-
-.widget_text .textwidget p:last-child {
-  margin-bottom: 0;
-}
-
-.footer-b {
-  background: #212121;
-  padding: 15px 0;
-  font-size: 0.888em;
-  color: rgba(255, 255, 255, 0.8);
-  font-weight: 400;
+.site-footer .grid.column-3 .col {
   text-align: center;
+
+}
+
+.site-footer .footer-search {
+  padding: 0;
+  margin: 0;
+}
+
+.site-footer .footer-group-page {
+  padding: 0;
+  margin: 50px 0 0 0;
+}
+
+/* TIÊU ĐỀ */
+.site-footer h2,
+.site-footer h3,
+.site-footer p {
+  color: #000;
+}
+
+.site-footer p {}
+
+/* FORM TÌM KIẾM */
+.wp-block-search__inside-wrapper {
+  display: flex;
+  margin-top: 12px;
+}
+
+.footer-title-search {
+  width: 140px;
+}
+
+.col .wp-block-search__input {
+  flex: 1;
+  border-radius: 1px;
+  border: none;
+}
+.col .wp-block-search__input::placeholder {
+  font-size: 15px;
+}
+
+.col .wp-block-search__button {
+  background: transparent;
+  border: 1px solid white;
+  border-radius: 0px;
+  cursor: pointer;
+  color: #fff;
+  margin-left: 20px;
+  transition: all 0.3s linear;
+}
+.col .wp-block-search__button:hover {
+  background: #fff;
+  border: 1px solid #ff6900;
+  color: #ff6900;
+  opacity: 1;
+}
+
+/* MENU LINK */
+.wp-block-group p a {
+  color: black;
+  text-decoration: none;
+}
+
+.wp-block-group p a:hover {
+  text-decoration: underline;
+}
+
+/* SOCIAL LIST */
+.wp-block-social-links {
+  display: flex;
+  gap: 10px;
+}
+.footer-icon{
+  margin-bottom: 40px;
+}
+
+/* ====== FOOTER BOTTOM ====== */
+.footer-b {
+  display: none;
+  background: #000;
+  padding: 15px 0;
+}
+
+.footer-b .copyright {
+  text-align: center;
+  color: #fff;
+  font-size: 14px;
 }
 
 .footer-b a {
-  color: rgba(255, 255, 255, 0.8);
-}
-
-.footer-b a:hover {
-  color: #2ace5e;
-}
-
-.footer-b .privacy-block {
-  display: inline-block;
-  vertical-align: middle;
-  line-height: 1.5;
-  width: 200px;
-  text-align: left;
-}
-
-.footer-b .privacy-block+.copyright {
-  display: inline-block;
-  vertical-align: middle;
-  width: calc(100% - 205px);
-  text-align: right;
+  color: #fff;
+  text-decoration: underline;
 }
 
 #back-to-top {
@@ -3750,6 +4078,7 @@ SINGLE JOB PAGE
 .single-job .site-content .entry-header .company-logo {
   float: left;
   width: 100px;
+  height: 100px;
   margin: 0;
 }
 
@@ -4708,19 +5037,20 @@ WIDGET CALL TO ACTION
 
 .widget_raratheme_companion_cta_widget a.btn-cta {
   display: inline-block;
-  background: #2ace5e;
-  border: 1px solid #2ace5e;
+  background: transparent;
+  border: 1px solid #fff;
   color: #fff;
   font-weight: 700;
   margin: 5px;
   font-size: 0.888em;
   border-radius: 5px;
   padding: 10px 18px;
+  transition: all 0.3s ease;
 }
 
 .widget_raratheme_companion_cta_widget a.btn-cta:hover {
-  background: none;
   color: #2ace5e;
+  border: 1px solid #2ace5e;
 }
 
 .widget_raratheme_companion_cta_widget .text a.btn-cta {
@@ -6730,6 +7060,7 @@ RESPONSIVE STYLESHEET
   /*===========================
 	TESTIMONIAL SECTION
 	===========================*/
+
   .testimonial-section .widget_rrtc_testimonial_widget .rtc-testimonial-inner-holder {
     padding-left: 50px;
     padding-right: 50px;
@@ -7864,9 +8195,8 @@ RESPONSIVE STYLESHEET
 .wp-block-search__inside-wrapper input {
   color: var(--font-color);
   border: 1px solid #e6e6e6;
-  border-radius: 5px;
   padding: 5px 15px;
-  width: 100%;
+  width: 500px !important;
   height: 50px;
   font-size: 0.8888em;
   font-weight: 400;
@@ -7878,7 +8208,7 @@ RESPONSIVE STYLESHEET
 }
 
 .wp-block-search__button {
-  width: 50px;
+  width: 100px;
   height: 50px;
   line-height: 50px;
   text-align: center;
@@ -7886,20 +8216,12 @@ RESPONSIVE STYLESHEET
   border-radius: 0 5px 5px 0;
   border: none;
   color: var(--white-color);
-  background: var(--primary-color) url(images/search-icon.svg);
-  background-size: 15px;
-  background-repeat: no-repeat;
-  background-position: center;
-  text-indent: 60px;
+  background: var(--primary-color);
   overflow: hidden;
   margin: 0;
 }
 
 .wp-block-search__button:hover {
-  background: var(--primary-color) url(images/search-icon.svg);
-  background-size: 15px;
-  background-repeat: no-repeat;
-  background-position: center;
   opacity: 0.75;
 }
 
