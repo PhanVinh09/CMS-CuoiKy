@@ -3121,42 +3121,101 @@ section[class*="-section"] .widget_raratheme_companion_cta_widget .right .button
 }
 
 /*===========================
-ARTICLE SECTION
+ARTICLE SECTION (đã sửa và thêm css)
 ===========================*/
 section.article-section {
   margin: 70px 0;
   text-align: center;
+  background: #f2f2f2;
 }
 
-.article-section .article-wrap {
+.article-service-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 30px;
-  text-align: left;
-  margin-top: 50px;
-  margin-bottom: 40px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  margin-top: 40px;
 }
 
-.article-section .article-wrap article {
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.16);
-  border-radius: 5px;
-  /*overflow: hidden;*/
+.service-item {
+  display: grid;
+  grid-template-columns: 40% 60%;
+  align-items: center;
+  background: #fff;
+  padding: 22px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+  transition: 0.3s ease;
 }
 
-.article-section .article-wrap article img {
+/* === IMAGE === */
+.service-image img {
   width: 100%;
+  height: 200px;
+  object-fit: cover;
 }
 
-.article-section .article-wrap header.entry-header {
-  padding: 30px;
+/* === CONTENT === */
+.service-content {
+  padding-left: 25px;
+  text-align: left;
 }
 
-.article-section .article-wrap header.entry-header .entry-title {
-  margin: 10px 0 0 0;
-  line-height: 1.5;
-  font-size: 1.112em;
+.service-title {
+  font-size: 20px;
   font-weight: 700;
+  margin-bottom: 8px;
 }
+
+.service-title a {
+  color: #000;
+  text-decoration: none;
+}
+
+.service-title a:hover {
+  color: #ff6b3d;
+}
+
+.service-desc {
+  color: #666;
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.service-readmore {
+  color: #ff6b3d;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.service-readmore:hover {
+  text-decoration: underline;
+}
+
+.btn-wrap {
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin: 40px auto;
+}
+
+@media (max-width: 900px) {
+  .article-service-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-item {
+    grid-template-columns: 1fr;
+  }
+
+  .service-content {
+    padding-left: 0;
+    margin-top: 20px;
+  }
+
+  .service-image img {
+    height: 250px;
+  }
+}
+
 
 /*=========================
 TESTIMONIAL SECTION
