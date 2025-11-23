@@ -3218,7 +3218,7 @@ section.article-section {
 
 
 /*=========================
-TESTIMONIAL SECTION
+TESTIMONIAL SECTION (đã sửa css ẩn đi )
 =========================*/
 section.testimonial-section:after {
   content: "";
@@ -3239,6 +3239,7 @@ section.testimonial-section {
   z-index: 1;
   background-image: url(images/testimonial-bg.jpg);
   background-repeat: no-repeat;
+  display: none;
 }
 
 .testimonial-section .section-title,
@@ -3327,11 +3328,12 @@ section.testimonial-section {
 }
 
 /*==========================
-CLIENT SECTION
+CLIENT SECTION (đã sửa css ẩn nó đi)
 ==========================*/
 section.client-section {
   margin: 40px 0 60px 0;
   text-align: center;
+  display: none;
 }
 
 .client-section .widget {
@@ -7019,6 +7021,7 @@ RESPONSIVE STYLESHEET
   /*===========================
 	TESTIMONIAL SECTION
 	===========================*/
+
   .testimonial-section .widget_rrtc_testimonial_widget .rtc-testimonial-inner-holder {
     padding-left: 50px;
     padding-right: 50px;
