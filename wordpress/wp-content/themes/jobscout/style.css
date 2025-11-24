@@ -1849,10 +1849,11 @@ COMMENTS AREA
 /*=========================
 SIDEBARS
 =========================*/
-.site-content {
+/* .site-content {
   margin-top: 50px;
   margin-bottom: 50px;
-}
+} */
+/* ẩn */
 
 .rightsidebar #primary {
   float: left;
@@ -1869,6 +1870,7 @@ SIDEBARS
 #secondary {
   float: left;
   width: 25%;
+  /* display: none; ẩn sidebar */
 }
 
 /*=========================
@@ -3410,6 +3412,7 @@ SITE FOOTER SECTION (đã thêm và sửa css)
   border-radius: 1px;
   border: none;
 }
+
 .col .wp-block-search__input::placeholder {
   font-size: 15px;
 }
@@ -3423,6 +3426,7 @@ SITE FOOTER SECTION (đã thêm và sửa css)
   margin-left: 20px;
   transition: all 0.3s linear;
 }
+
 .col .wp-block-search__button:hover {
   background: #fff;
   border: 1px solid #ff6900;
@@ -3445,7 +3449,8 @@ SITE FOOTER SECTION (đã thêm và sửa css)
   display: flex;
   gap: 10px;
 }
-.footer-icon{
+
+.footer-icon {
   margin-bottom: 40px;
 }
 
@@ -3737,6 +3742,8 @@ SINGLE PAGE
 
 .page .site-main article .entry-title {
   margin-top: 0;
+  display: none;
+  /* ẩn tiêu đề */
 }
 
 .single .site-main article figure.post-thumbnail {
@@ -8480,4 +8487,67 @@ RESPONSIVE STYLESHEET
 
 .wp-block-social-links {
   flex-wrap: wrap !important;
+}
+
+/*===============================
+	PAGE ABOUT US
+	===============================*/
+.about-banner {
+  position: relative;
+  width: 100vw;
+  max-width: none;
+  top: -29px;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  box-sizing: border-box;
+}
+
+.about-banner img {
+  width: 1000px;
+}
+
+.about-banner-title {
+  line-height: normal !important;
+}
+
+.about-img-text-1,
+.about-img-text-2 {
+  margin: 40px 60px;
+}
+
+.about-img-text-1 h3,
+.about-img-text-2 h3 {
+  margin: 0;
+}
+
+.about-img-text-1 p,
+.about-img-text-2 p {
+  margin-top: 0 !important;
+}
+
+.about-img-text-1 ul,
+.about-img-text-2 ul {
+  margin: 0 !important;
+  padding-left: 20px;
+}
+
+.about-img-text-2 .about-info{
+  align-items: center;
+}
+.about-text-few {
+  position: relative;
+  box-shadow: 0 0 3px 3px #f1f1f1;
+  width: 100vw;
+  max-width: none;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  box-sizing: border-box;
+}
+
+.about-text-few h2 {
+  padding-top: 30px;
 }
