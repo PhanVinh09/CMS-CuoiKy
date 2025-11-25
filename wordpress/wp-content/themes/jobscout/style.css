@@ -1849,9 +1849,11 @@ COMMENTS AREA
 /*=========================
 SIDEBARS
 =========================*/
-.site-content {
+/* .site-content {
+  margin-top: 50px;
   margin-bottom: 50px;
-}
+} */
+/* ẩn */
 
 .rightsidebar #primary {
   float: left;
@@ -1868,6 +1870,7 @@ SIDEBARS
 #secondary {
   float: left;
   width: 25%;
+  /* display: none; ẩn sidebar */
 }
 
 /*=========================
@@ -3408,6 +3411,7 @@ SITE FOOTER SECTION (đã thêm và sửa css)
   border-radius: 1px;
   border: none;
 }
+
 .col .wp-block-search__input::placeholder {
   font-size: 15px;
 }
@@ -3421,6 +3425,7 @@ SITE FOOTER SECTION (đã thêm và sửa css)
   margin-left: 20px;
   transition: all 0.3s linear;
 }
+
 .col .wp-block-search__button:hover {
   background: #fff;
   border: 1px solid #ff6900;
@@ -3443,7 +3448,8 @@ SITE FOOTER SECTION (đã thêm và sửa css)
   display: flex;
   gap: 10px;
 }
-.footer-icon{
+
+.footer-icon {
   margin-bottom: 40px;
 }
 
@@ -3735,6 +3741,8 @@ SINGLE PAGE
 
 .page .site-main article .entry-title {
   margin-top: 0;
+  display: none;
+  /* ẩn tiêu đề */
 }
 
 .single .site-main article figure.post-thumbnail {
@@ -8478,172 +8486,103 @@ RESPONSIVE STYLESHEET
   flex-wrap: wrap !important;
 }
 
-/* ===== GRID CHO DANH SÁCH ===== */
-.job_listings .job_listings {
-    display: grid !important;
-    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-    gap: 24px;
-    margin-top: 24px;
-    padding: 0;
+/*===============================
+	PAGE ABOUT US
+	===============================*/
+.about-banner {
+  position: relative;
+  width: 100vw;
+  max-width: none;
+  top: -29px;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  box-sizing: border-box;
 }
 
-/* ===== CARD JOB ===== */
-.job_listings[data-location] > .job_listings article.job_listing {
-    border: 1px solid #e5e5e5;
-    border-radius: 12px;
-    padding: 20px;
-    background: #fff;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-    transition: 0.2s ease;
+.about-banner-title {
+  line-height: normal !important;
 }
 
-.job_listings[data-location] > .job_listings article.job_listing:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+.about-img-text-1,
+.about-img-text-2 {
+  margin: 40px 60px;
 }
 
-/* ===== LOGO ===== */
-.job_listings[data-location] .company-logo img {
-    width: 70px;
-    height: 70px;
-    object-fit: contain;
-    margin-bottom: 10px;
+.about-img-text-1 h3,
+.about-img-text-2 h3 {
+  margin: 0;
 }
 
-/* ===== TITLE ===== */
-.job_listings[data-location] h2.entry-title a {
-    font-size: 18px;
-    font-weight: 700;
-    color: #222;
+.about-img-text-1 p,
+.about-img-text-2 p {
+  margin-top: 0 !important;
 }
 
-.meta-line {
-    background: #f5f5f5;
-    padding: 8px 14px;
-    border-radius: 8px;
-    display: flex;
-    gap: 5px;
-    font-size: 13px;
-    color: #666;
-    align-items: center;
-    width: max-content;
+.about-img-text-1 ul,
+.about-img-text-2 ul {
+  margin: 0 !important;
+  padding-left: 20px;
 }
 
-.meta-line span {
-    position: relative;
-    padding-right: 14px;
+.about-img-text-2 .about-info {
+  align-items: center;
 }
 
-.meta-line span:not(:last-child)::after {
-    content: "|";
-    position: absolute;
-    right: 0;
-    top: 0;
-    color: #aaa;
-}
-.job_filters,
-form.job_filters,
-div.job_filters,
-.job_listings .job_filters,
-.job_listings .search_jobs,
-.job-listings .job_filters,
-div.search_jobs,
-.job_types,
-.showing_jobs,
-.rss_link {
-    display: none !important;
-}
-#secondary {
-    display: none !important;
+.about-text-few {
+  position: relative;
+  box-shadow: 0 0 3px 3px #f1f1f1;
+  width: 100vw;
+  max-width: none;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  box-sizing: border-box;
 }
 
-#primary {
-    width: 100% !important;
-}
-.page-id-10 #primary,
-.page-id-10 .entry-content {
-    max-width: 1140px !important;
-    margin: 0 auto !important; 
-    padding: 0 20px !important;
-}
-.page-id-10 .job_listings[data-location] > .job_listings {
-    display: grid !important;
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 30px !important;
-}
-.page-id-10 article.job_listing {
-    border: 1px solid #e5e5e5;
-    border-radius: 10px;
-    background: #fff;
-    padding: 22px;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
-}
-.page-id-10 form.job_filters {
-    display: none !important;
-}
-/* Ẩn header mặc định của theme trên trang Jobs */
-body.page-id-10 .entry-header:not(.jobs-header) {
-    display: none;
+.about-text-few h2 {
+  padding-top: 30px;
 }
 
-/* Layout cho header mới */
-.jobs-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 16px;
-    margin: 30px 0px 0px 20px;
+/*===============================
+	PAGE CONTACT US
+	===============================*/
+.contact-banner {
+  position: relative;
+  width: 100vw;
+  max-width: none;
+  top: -30px;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  box-sizing: border-box;
 }
 
-.jobs-sort-form select {
-    padding: 6px 10px;
-    border-radius: 4px;
-    border: 1px solid #ddd;
-    font-size: 14px;
-}
-/* ================================
-   BANNER JOBS HERO - FULL WIDTH
-   ================================ */
-.page-id-10 .jobs-hero {
-    width: 100vw;                     /* tràn full width */
-    margin-left: calc(50% - 50vw);    /* thoát khỏi container */
-    height: 260px;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    position: relative;
+.contact-banner p {
+  letter-spacing: 0 !important;
 }
 
-/* Lớp overlay tối */
-.page-id-10 .jobs-hero::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(0,0,0,0.35);
+.contact-text-few {
+  position: relative;
+  box-shadow: 0 0 3px 3px #f1f1f1;
+  width: 100vw;
+  max-width: none;
+  top: -24px;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  box-sizing: border-box;
+  padding: 20px
 }
-
-/* Nội dung chữ */
-.page-id-10 .jobs-hero-inner {
-    position: relative;
-    z-index: 2;
+.contact-group a{
+  color: #ff6900 !important;
+  text-decoration: underline !important;
 }
-
-.page-id-10 .jobs-hero-inner h2 {
-    color: #fff;
-    font-size: 34px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    font-weight: 700;
-    margin: 0;
-}
-.single-job_listing .entry-header,
-.single-job_listing .entry-title,
-.single-job_listing .job-type,
-.single-job_listing article > header {
-	display: none !important;
+.contact-group a:hover{
+  color: blue !important;
+  text-decoration: underline !important;
 }
