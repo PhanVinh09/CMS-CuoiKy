@@ -66,12 +66,12 @@ $company_name = get_post_meta(get_the_ID(), '_company_name', true);
 
 			<!-- 5. Category Name -->
 			<?php
-			$categories = get_the_terms(get_the_ID(), 'job_listing_category');
+			$company_name = get_post_meta(get_the_ID(), '_company_name', true);
 
-			if ($categories && ! is_wp_error($categories)) {
-				echo '<span class="meta-badge badge-category">' . esc_html($categories[0]->name) . '</span>';
+			if (! empty($company_name)) {
+				echo '<span class="meta-badge badge-company-name">' . esc_html($company_name) . '</span>';
 			} else {
-				echo '<span class="meta-badge badge-category">No Category</span>';
+				echo '<span class="meta-badge badge-company-name">No Company</span>';
 			}
 			?>
 

@@ -86,3 +86,7 @@ if( jobscout_is_woocommerce_activated() ){
 if( jobscout_is_wp_job_manager_activated() ) :
 	require get_template_directory() . '/inc/wp-job-manager-filters.php';
 endif;
+// Remove default WP Job Manager styles
+add_action('wp_enqueue_scripts', function() {
+    wp_dequeue_style('wp-job-manager-frontend');
+}, 100);
