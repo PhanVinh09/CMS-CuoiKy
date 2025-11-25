@@ -8584,6 +8584,7 @@ RESPONSIVE STYLESHEET
 .contact-group a:hover{
   color: blue !important;
   text-decoration: underline !important;
+}
 /* FORCE hiển thị tiêu đề job listing */
 div.job_listings article .entry-title,
 div.job_listings article .entry-title a {
