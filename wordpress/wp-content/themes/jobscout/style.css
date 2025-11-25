@@ -8503,10 +8503,6 @@ RESPONSIVE STYLESHEET
   box-sizing: border-box;
 }
 
-.about-banner img {
-  width: 1000px;
-}
-
 .about-banner-title {
   line-height: normal !important;
 }
@@ -8532,9 +8528,10 @@ RESPONSIVE STYLESHEET
   padding-left: 20px;
 }
 
-.about-img-text-2 .about-info{
+.about-img-text-2 .about-info {
   align-items: center;
 }
+
 .about-text-few {
   position: relative;
   box-shadow: 0 0 3px 3px #f1f1f1;
@@ -8551,6 +8548,45 @@ RESPONSIVE STYLESHEET
   padding-top: 30px;
 }
 
+/*===============================
+	PAGE CONTACT US
+	===============================*/
+.contact-banner {
+  position: relative;
+  width: 100vw;
+  max-width: none;
+  top: -30px;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  box-sizing: border-box;
+}
+
+.contact-banner p {
+  letter-spacing: 0 !important;
+}
+
+.contact-text-few {
+  position: relative;
+  box-shadow: 0 0 3px 3px #f1f1f1;
+  width: 100vw;
+  max-width: none;
+  top: -24px;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  box-sizing: border-box;
+  padding: 20px
+}
+.contact-group a{
+  color: #ff6900 !important;
+  text-decoration: underline !important;
+}
+.contact-group a:hover{
+  color: blue !important;
+  text-decoration: underline !important;
 /* FORCE hiển thị tiêu đề job listing */
 div.job_listings article .entry-title,
 div.job_listings article .entry-title a {
