@@ -5898,14 +5898,15 @@ JOB LISTING PAGE
 }
 
 .site-main .entry-content div.job_listings div.job_listings article .company-logo {
-  width: 100px;
+  width: 70px;
   margin: 0;
+  height: 70px; 
   background: #eeeeee;
 }
 
 .site-main .entry-content div.job_listings div.job_listings article .job-title-wrap {
   width: calc(100% - 100px);
-  padding-left: 20px;
+  padding-left: 10px;
 }
 
 .site-main .entry-content div.job_listings div.job_listings article .entry-title {
@@ -8480,4 +8481,128 @@ RESPONSIVE STYLESHEET
 
 .wp-block-social-links {
   flex-wrap: wrap !important;
+}
+
+/* ===== GRID CHO DANH SÁCH ===== */
+.job_listings[data-location] > .job_listings {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 24px;
+    margin-top: 24px;
+    padding: 0;
+}
+
+/* ===== CARD JOB ===== */
+.job_listings[data-location] > .job_listings article.job_listing {
+    border: 1px solid #e5e5e5;
+    border-radius: 12px;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    transition: 0.2s ease;
+}
+
+.job_listings[data-location] > .job_listings article.job_listing:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+
+/* ===== LOGO ===== */
+.job_listings[data-location] .company-logo img {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+/* ===== TITLE ===== */
+.job_listings[data-location] h2.entry-title a {
+    font-size: 18px;
+    font-weight: 700;
+    color: #222;
+}
+
+.meta-line {
+    background: #f5f5f5;
+    padding: 8px 14px;
+    border-radius: 8px;
+    display: flex;
+    gap: 5px;
+    font-size: 13px;
+    color: #666;
+    align-items: center;
+    width: max-content;
+}
+
+.meta-line span {
+    position: relative;
+    padding-right: 14px;
+}
+
+.meta-line span:not(:last-child)::after {
+    content: "|";
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: #aaa;
+}
+.job_filters,
+form.job_filters,
+div.job_filters,
+.job_listings .job_filters,
+.job_listings .search_jobs,
+.job-listings .job_filters,
+div.search_jobs,
+.job_types,
+.showing_jobs,
+.rss_link {
+    display: none !important;
+}
+#secondary {
+    display: none !important;
+}
+
+#primary {
+    width: 100% !important;
+}
+.page-id-10 #primary,
+.page-id-10 .entry-content {
+    max-width: 1140px !important;
+    margin: 0 auto !important; 
+    padding: 0 20px !important;
+}
+.page-id-10 .job_listings[data-location] > .job_listings {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 30px !important;
+}
+.page-id-10 article.job_listing {
+    border: 1px solid #e5e5e5;
+    border-radius: 10px;
+    background: #fff;
+    padding: 22px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+}
+.page-id-10 form.job_filters {
+    display: none !important;
+}
+/* Ẩn header mặc định của theme trên trang Jobs */
+body.page-id-10 .entry-header:not(.jobs-header) {
+    display: none;
+}
+
+/* Layout cho header mới */
+.jobs-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.jobs-sort-form select {
+    padding: 6px 10px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    font-size: 14px;
 }
