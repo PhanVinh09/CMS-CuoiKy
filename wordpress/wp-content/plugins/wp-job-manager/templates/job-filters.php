@@ -44,7 +44,22 @@ do_action( 'job_manager_job_filters_before', $atts );
 		<?php endif; ?>
 
 		<div style="clear: both"></div>
-
+			  <!-- ===== SORT BY (MỚI NHẤT / CŨ NHẤT) ===== -->
+        <div class="search_sort">
+            <label for="job_sort"><?php esc_html_e( 'Sắp xếp', 'jobscout' ); ?></label>
+            <select name="sort" id="job_sort">
+                <?php
+                $current_sort = isset( $_REQUEST['sort'] ) ? sanitize_text_field( wp_unslash( $_REQUEST['sort'] ) ) : 'latest';
+                ?>
+                <option value="latest" <?php selected( $current_sort, 'latest' ); ?>>
+                    <?php esc_html_e( 'Mới nhất', 'jobscout' ); ?>
+                </option>
+                <option value="oldest" <?php selected( $current_sort, 'oldest' ); ?>>
+                    <?php esc_html_e( 'Cũ nhất', 'jobscout' ); ?>
+                </option>
+            </select>
+        </div>
+        <!-- ===== END SORT BY ===== -->
 		<?php if ( $categories ) : ?>
 			<?php foreach ( $categories as $category ) : ?>
 				<input type="hidden" name="search_categories[]" value="<?php echo esc_attr( sanitize_title( $category ) ); ?>" />
@@ -83,5 +98,6 @@ do_action( 'job_manager_job_filters_before', $atts );
 </form>
 
 <?php do_action( 'job_manager_job_filters_after', $atts ); ?>
+
 
 <noscript><?php esc_html_e( 'Your browser does not support JavaScript, or it is disabled. JavaScript must be enabled in order to view listings.', 'wp-job-manager' ); ?></noscript>
