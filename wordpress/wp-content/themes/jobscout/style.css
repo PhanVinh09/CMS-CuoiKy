@@ -1855,11 +1855,10 @@ SIDEBARS
 } */
 /* ẩn */
 
-.rightsidebar #primary {
+/* .rightsidebar #primary {
   float: left;
-  width: 75%;
   padding-right: 40px;
-}
+} */
 
 .leftsidebar #primary {
   float: right;
@@ -1868,9 +1867,8 @@ SIDEBARS
 }
 
 #secondary {
-  float: left;
-  width: 25%;
-  /* display: none; ẩn sidebar */
+  display: none;
+   /* ẩn sidebar */
 }
 
 /*=========================

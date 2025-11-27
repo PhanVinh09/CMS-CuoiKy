@@ -38,7 +38,6 @@ global $post;
 }
 
 .single-job_listing .container {
-	max-width: 100% !important;
 	padding: 0 !important;
 }
 
@@ -137,7 +136,6 @@ body.single-job_listing {
 .jsv3-meta {
 	display: flex;
 	flex-wrap: wrap;
-	gap: 10px;
 }
 
 .jsv3-badge {
@@ -145,7 +143,6 @@ body.single-job_listing {
 	padding: 6px 14px;
 	background: #f5f5f5;
 	border: 1px solid #e0e0e0;
-	border-radius: 4px;
 	font-size: 13px;
 	color: #555;
 }
@@ -442,7 +439,6 @@ body.single-job_listing {
 .jsv3-card-meta {
 	display: flex;
 	flex-wrap: wrap;
-	gap: 6px;
 }
 
 .jsv3-card-meta .jsv3-badge {
@@ -623,7 +619,7 @@ body.single-job_listing {
 	<!-- Breadcrumb -->
 	<div class="jsv3-breadcrumb">
 		<a href="<?php echo home_url(); ?>">Home</a> &gt; 
-		<a href="<?php echo get_post_type_archive_link('job_listing'); ?>">All Jobs</a> &gt; 
+		<a href="<?php echo home_url('/?page_id=10'); ?>">All Jobs</a> &gt; 
 		<span>Job Detail</span>
 	</div>
 
