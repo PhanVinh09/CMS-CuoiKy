@@ -4,6 +4,7 @@ services:
   wordpress:
     image: wordpress:latest
     container_name: wordpress
+    restart: always
     ports:
       - "8080:80"
     environment:
@@ -12,7 +13,7 @@ services:
       WORDPRESS_DB_USER: user
       WORDPRESS_DB_PASSWORD: password
     volumes:
-      - ./wordpress:/var/www/html   # mount source ra thư mục local
+      - ./wordpress:/var/www/html
     networks:
       - wordpress_network
     depends_on:
@@ -21,6 +22,7 @@ services:
   db:
     image: mysql:5.7
     container_name: db
+    restart: always
     environment:
       MYSQL_ROOT_PASSWORD: rootpassword
       MYSQL_DATABASE: wordpress
@@ -34,10 +36,17 @@ services:
   phpmyadmin:
     image: phpmyadmin/phpmyadmin:latest
     container_name: phpmyadmin
+    restart: always
     environment:
       PMA_HOST: db
       PMA_USER: root
       PMA_PASSWORD: rootpassword
+      
+      # ⚡ Cực quan trọng: tăng giới hạn upload SQL
+      UPLOAD_LIMIT: 256M
+      MEMORY_LIMIT: 256M
+      MAX_EXECUTION_TIME: 600
+
     ports:
       - "8081:80"
     networks:
@@ -46,7 +55,7 @@ services:
       - db
 
 volumes:
-  db_data:   # chỉ cần volume cho database
+  db_data:
 
 networks:
   wordpress_network:

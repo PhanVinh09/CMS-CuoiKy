@@ -903,6 +903,10 @@ a:hover {
   table-layout: fixed;
 }
 
+.site-content{
+  background: #f2f2f2;
+}
+
 .clear:after,
 .entry-content:after,
 .comment-content:after,
@@ -3183,6 +3187,11 @@ section.article-section {
 .service-title a {
   color: #000;
   text-decoration: none;
+  display: -webkit-box;    
+  -webkit-line-clamp: 3;      
+  -webkit-box-orient: vertical; 
+  overflow: hidden;       
+  text-overflow: ellipsis;
 }
 
 .service-title a:hover {
