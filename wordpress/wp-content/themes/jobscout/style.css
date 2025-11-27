@@ -2878,41 +2878,56 @@ section.top-job-section .section-title {
   color: #d93674;
   border-color: #d93674;
 } */
-
+ 
 .top-job-section div.job_listings .load_more_jobs {
   display: table;
   margin: 20px auto 0 auto;
   font-size: 0.8888em;
-  text-transform: uppercase;
+  text-transform: none;
   letter-spacing: 1px;
-  background: #2ace5e;
+  background: none;
   border-radius: 5px;
   color: #fff;
   padding: 12px 20px 12px 45px;
-  border: 1px solid #2ace5e;
-  position: relative;
+  border: 1px solid #ce952a;
+  position: relative; 
+  overflow: visible;
 }
-
+ 
 .top-job-section div.job_listings .load_more_jobs:hover {
-  color: #2ace5e;
+  color: #ce952a;
   background: none;
 }
 
-.top-job-section div.job_listings .load_more_jobs::before {
-  content: "";
-  background-image: url('data:image/svg+xml; utf-8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="%23fff" d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"></path></svg>');
-  background-repeat: no-repeat;
-  width: 11px;
-  height: 12px;
-  position: absolute;
-  top: 17px;
-  left: 20px;
+.top-job-section div.job_listings .load_more_jobs > strong,
+.top-job-section div.job_listings .load_more_jobs > * {
+  color: transparent !important;
+  text-transform: none !important;
+  position: relative;
+  z-index: 0;
 }
 
-.top-job-section div.job_listings .load_more_jobs:hover::before {
-  content: "";
-  background-image: url('data:image/svg+xml; utf-8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="%232ace5e" d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"></path></svg>');
+.top-job-section div.job_listings .load_more_jobs::after {
+  content: "Xem thêm việc làm"; 
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8888em;
+  letter-spacing: 1px;
+  text-transform: none;
+  color: #ce952a;
+  z-index: 1;
+  background: transparent;
+  pointer-events: none;
 }
+
+.top-job-section div.job_listings .load_more_jobs:hover::after {
+  color: #fff;
+  background: #ce952a;
+}
+
 
 .top-job-section div.job_listings .load_more_jobs strong {
   font-weight: 700;
@@ -5981,11 +5996,9 @@ JOB LISTING PAGE
 
 div.job_listings .load_more_jobs {
   display: table;
-  border: 1px solid #2ace5e;
   text-transform: uppercase;
   font-size: 0.7778em;
   font-weight: 400;
-  background: #2ace5e;
   color: #fff;
   padding: 15px 20px;
   margin-top: 40px;
@@ -5997,8 +6010,6 @@ div.job_listings .load_more_jobs {
 div.job_listings .load_more_jobs:hover,
 div.job_listings .load_more_jobs:focus {
   background: none;
-  color: #2ace5e;
-  border-bottom-color: #2ace5e;
 }
 
 .site-main .job_listings .jobscout_job_filters {
@@ -8581,11 +8592,13 @@ RESPONSIVE STYLESHEET
   box-sizing: border-box;
   padding: 20px
 }
-.contact-group a{
+
+.contact-group a {
   color: #ff6900 !important;
   text-decoration: underline !important;
 }
-.contact-group a:hover{
+
+.contact-group a:hover {
   color: blue !important;
   text-decoration: underline !important;
 }
