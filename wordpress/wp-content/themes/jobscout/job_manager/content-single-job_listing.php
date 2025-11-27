@@ -33,7 +33,20 @@ global $post;
 .single-job_listing .entry-content {
 	max-width: 100% !important;
 	width: 100% !important;
+	padding: 0 !important;
 	margin: 0 !important;
+}
+
+.single-job_listing .container {
+	padding: 0 !important;
+}
+
+.single-job_listing article {
+	background: #f8f8f8 !important;
+}
+
+body.single-job_listing {
+	background: #f8f8f8 !important;
 }
 
 /* Main Container */
@@ -123,7 +136,6 @@ global $post;
 .jsv3-meta {
 	display: flex;
 	flex-wrap: wrap;
-	gap: 10px;
 }
 
 .jsv3-badge {
@@ -131,7 +143,6 @@ global $post;
 	padding: 6px 14px;
 	background: #f5f5f5;
 	border: 1px solid #e0e0e0;
-	border-radius: 4px;
 	font-size: 13px;
 	color: #555;
 }
@@ -146,22 +157,22 @@ global $post;
 }
 
 .jsv3-apply-wrapper .application_button {
-	width: 100%;
-	padding: 12px 28px;
-	background: #ff6b35;
-	color: #fff;
-	border: none;
-	font-size: 14px;
-	font-weight: 600;
-	cursor: pointer;
-	border-radius: 0;
-	transition: all 0.2s;
-	text-align: center;
-	text-transform: uppercase;
+	    width: 100%;
+    padding: 12px 28px;
+    background: #ffffff;
+    color: #ff6f00ff;
+    border: 1px solid #ffe765;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 0;
+    transition: all 0.2s;
+    text-align: center;
+    text-transform: uppercase;
 }
 
 .jsv3-apply-wrapper .application_button:hover {
-	background: #e55a25;
+	background: #ffe765;
 }
 
 .jsv3-apply-wrapper .application_details {
@@ -186,9 +197,9 @@ global $post;
 
 .jsv3-btn {
 	padding: 12px 28px;
-	border: 1px solid #ff6b35;
+	border: 1px solid #000000ff;
 	background: #fff;
-	color: #ff6b35;
+	color: #000000ff;
 	font-size: 14px;
 	font-weight: 600;
 	cursor: pointer;
@@ -428,7 +439,6 @@ global $post;
 .jsv3-card-meta {
 	display: flex;
 	flex-wrap: wrap;
-	gap: 6px;
 }
 
 .jsv3-card-meta .jsv3-badge {
@@ -602,21 +612,6 @@ global $post;
 		grid-template-columns: repeat(2, 1fr);
 	}
 }
-.single-job .site-content {
-    margin-top: 0;
-    background: #f8f8f8 !important;
-}
-.job_listing {
-    display: flex;
-    padding: 0px !important;
-    background: #fff;
-    border-radius: 6px;
-    margin-bottom: 20px;
-    align-items: flex-start;
-}
-.site-content {
-    margin-bottom: 0 !important;
-}
 </style>
 
 <div class="job-single-v3">
@@ -624,7 +619,7 @@ global $post;
 	<!-- Breadcrumb -->
 	<div class="jsv3-breadcrumb">
 		<a href="<?php echo home_url(); ?>">Home</a> &gt; 
-		<a href="<?php echo get_post_type_archive_link('job_listing'); ?>">All Jobs</a> &gt; 
+		<a href="<?php echo home_url('/?page_id=10'); ?>">All Jobs</a> &gt; 
 		<span>Job Detail</span>
 	</div>
 
@@ -773,5 +768,7 @@ global $post;
 			?>
 		</div>
 	</div>
+
+
 
 </div>
