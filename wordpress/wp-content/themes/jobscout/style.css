@@ -3755,6 +3755,7 @@ SINGLE PAGE
 
 .page .site-main article .entry-title {
   margin-top: 0;
+  display: none;
   /* ẩn tiêu đề */
 }
 
@@ -8628,8 +8629,9 @@ section.top-job-section {
     background: #fff;
     padding: 0;
 }
-.page-id-10 .page .site-main article .entry-title {
+.page-id-10 .site-main article .entry-title {
   margin-top: 0;
+  display: block !important;
 }
 /* Khối trắng ôm hết phần ALL JOBS + danh sách job */
 .jobs-wrapper-container {
