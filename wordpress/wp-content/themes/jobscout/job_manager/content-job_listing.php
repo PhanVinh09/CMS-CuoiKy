@@ -39,12 +39,18 @@ $company_name = get_post_meta(get_the_ID(), '_company_name', true);
 
 		<!-- 3. Ngày tạo công việc -->
 		<div class="job-date">
-			Ngày Tạo: Đã đăng
 			<?php
-			$post_date = get_the_date('Y-m-d H:i:s');
-			$diff = human_time_diff(strtotime($post_date), current_time('timestamp'));
-			echo $diff . ' trước';
+			echo esc_html__('Created:', 'jobscout') . ' ';
+
+			// Lấy timestamp ngày đăng bài
+			$posted_time = get_post_time('U', true);
+
+			// Định dạng ngày: Oct 20, 2022
+			$formatted_date = date('M d, Y', $posted_time);
+
+			echo esc_html($formatted_date);
 			?>
+
 		</div>
 
 		<div class="entry-meta">

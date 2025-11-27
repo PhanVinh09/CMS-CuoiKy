@@ -1,24 +1,20 @@
 <?php
 /**
- * The template for displaying all single job posts.
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
+ * The template for displaying single job listings
  *
  * @package JobScout
  */
+
 get_header(); ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
+<?php
+while ( have_posts() ) :
+    the_post();
+    
+    // Include trực tiếp file template custom
+    include( locate_template( 'job_manager/content-single-job_listing.php' ) );
+    
+endwhile;
+?>
 
-			<?php
-			while ( have_posts() ) : the_post();
-		        get_template_part( 'template-parts/content', 'job-single' );
-
-			endwhile; // End of the loop.
-			?>
-		</main><!-- #main -->
-	</div><!-- #primary -->
-
-<?php 
-get_footer();
+<?php get_footer();

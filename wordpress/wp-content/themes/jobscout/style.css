@@ -1855,11 +1855,10 @@ SIDEBARS
 } */
 /* ẩn */
 
-.rightsidebar #primary {
+/* .rightsidebar #primary {
   float: left;
-  width: 75%;
   padding-right: 40px;
-}
+} */
 
 .leftsidebar #primary {
   float: right;
@@ -1868,9 +1867,8 @@ SIDEBARS
 }
 
 #secondary {
-  float: left;
-  width: 25%;
-  /* display: none; ẩn sidebar */
+  display: none;
+   /* ẩn sidebar */
 }
 
 /*=========================
@@ -3757,7 +3755,6 @@ SINGLE PAGE
 
 .page .site-main article .entry-title {
   margin-top: 0;
-  display: none;
   /* ẩn tiêu đề */
 }
 
@@ -8601,4 +8598,131 @@ RESPONSIVE STYLESHEET
 .contact-group a:hover {
   color: blue !important;
   text-decoration: underline !important;
+}
+
+/* FORCE hiển thị tiêu đề job listing */
+div.job_listings article .entry-title,
+div.job_listings article .entry-title a {
+    font-size: 16px;
+    line-height: 1.4;
+    font-weight: 600;
+    color: #000;
+    display: block;
+    text-decoration: none;
+}
+/* Ẩn bộ lọc jobs trên trang All Jobs */
+.page-id-10 .job_filters {
+    display: none !important;
+}
+section.top-job-section {
+    background: #f5f5f7;
+    padding: 20px 0;
+}
+/* Chỉ áp dụng cho trang chủ */
+.home section.top-job-section {
+    background: #f5f5f7;
+    padding: 70px 0;
+}
+/* Trang All Jobs (page id 10) */
+.page-id-10 section.top-job-section {
+    background: #fff;
+    padding: 0;
+}
+.page-id-10 .page .site-main article .entry-title {
+  margin-top: 0;
+}
+/* Khối trắng ôm hết phần ALL JOBS + danh sách job */
+.jobs-wrapper-container {
+    max-width: 1200px;      /* canh giữa, độ rộng giống hình */
+    margin: 0 auto 60px;    /* auto để canh giữa */
+    padding: 40px 50px;
+    background: #ffffff;
+}
+
+/* ALL JOBS + dropdown nằm cùng 1 dòng */
+.jobs-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+/* Chữ ALL JOBS */
+.jobs-header .entry-title {
+    margin: 0;
+    font-size: 26px;
+    font-weight: 700;
+}
+
+/* Form sort không bị margin thừa */
+.jobs-sort-form {
+    margin: 0;
+}
+
+/* Style cho select Latest / Oldest */
+.job-sort-dropdown {
+    min-width: 160px;
+    padding: 8px 35px 8px 12px;
+    border: 1px solid #ccc;
+    background: #fff;
+    font-size: 14px;
+}
+.jobs-hero {
+    width: 100vw;                 /* full ngang */
+    margin-left: calc(50% - 50vw); /* phá container, kéo ra full màn hình */
+    margin-right: calc(50% - 50vw);
+    height: 360px;                /* anh chỉnh cao theo ý */
+    background-size: cover;       /* luôn phủ hết */
+    background-position: center;  /* canh giữa */
+    background-repeat: no-repeat;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Overlay màu tối giống hình */
+.jobs-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.3);
+}
+
+/* Chữ trong hero */
+.jobs-hero-inner h2 {
+    position: relative;
+    z-index: 5;
+    color: #fff;
+    font-size: 36px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+.job-sort-dropdown {
+    appearance: none;          /* Ẩn dropdown mặc định */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    background-color: transparent;
+    border: none;              /* Bỏ box border */
+    border-bottom: 1px solid #000000; /* Chỉ để viền dưới giống style tối giản */
+    
+    padding: 6px 25px 6px 0;
+    font-size: 14px;
+    cursor: pointer;
+    color: #333;
+    outline: none;
+    background-image: url("data:image/svg+xml;utf8,<svg fill='%23333' height='12' viewBox='0 0 24 24' width='12' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: 12px;
+}
+.page-id-10 .site-content{
+    background: #f8f8f8 !important;
+}
+.page-id-10 .jobs-wrapper-container  {
+    background: #f8f8f8 !important;
+}
+.page-id-10 .job_listings  {
+    background: #f8f8f8 !important;
 }
